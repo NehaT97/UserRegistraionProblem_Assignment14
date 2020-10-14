@@ -17,9 +17,25 @@ function firstName()
 	fi
 }
 
+function lastName()
+{
+        echo "Enter the last name:"
+        read lastname
+
+        match="^[[:upper:]][a-z]{2,}"
+
+        if [[ $lastname =~ $match ]]
+        then
+                echo "valid lastname"
+        else
+                echo "Invalid lastname"
+
+        fi
+}
 
 main()
 {
 firstName
+lastName
 }
 main
