@@ -79,12 +79,29 @@ function password_8char_Rule1()
         fi
 }
 
-main()
+function password_1uppercase_Rule2()
 {
+        echo "Enter the password:"
+        read password
+
+	if  [[ ${#password} -ge 8 &&  "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]*  ]]        
+
+        then
+                echo "valid password"
+        else
+                echo "Invalid password"
+
+        fi
+}
+
+
+
+main() {
 firstName
 lastName
 validEmail
 validMobileNo
 password_8char_Rule1
+password_1uppercase_Rule2
 }
 main
