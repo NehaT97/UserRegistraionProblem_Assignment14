@@ -64,11 +64,27 @@ function validMobileNo()
         fi
 }
 
+function password_8char_Rule1()
+{
+        echo "Enter the password:"
+        read password
+
+        match="^[a-zA-Z0-9]{8}$"
+        if [[ $password =~ $match ]]
+        then
+                echo "valid password"
+        else
+                echo "Invalid password"
+
+        fi
+}
+
 main()
 {
 firstName
 lastName
 validEmail
 validMobileNo
+password_8char_Rule1
 }
 main
