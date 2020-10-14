@@ -81,7 +81,7 @@ function password_8char_Rule1()
 
 function password_1uppercase_Rule2()
 {
-        echo "Enter the password:"
+        echo "Enter the password to check uppercase rule:"
         read password
 
 	if  [[ ${#password} -ge 8 &&  "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]*  ]]        
@@ -94,6 +94,18 @@ function password_1uppercase_Rule2()
         fi
 }
 
+function password_AtLeastOneNumericValue(){
+	echo "Enter the password to check numeric value rule"
+	read password
+	match="^[A-Z0-9a-z]{8,}$"
+
+	if [[ $password =~ $match ]]
+   	then
+      		echo "valid password"
+   	else
+      		echo "invalid password"
+   	fi
+}
 
 
 main() {
@@ -103,5 +115,6 @@ validEmail
 validMobileNo
 password_8char_Rule1
 password_1uppercase_Rule2
+password_AtLeastOneNumericValue
 }
 main
