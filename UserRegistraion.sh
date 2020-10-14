@@ -49,10 +49,26 @@ function validEmail()
         fi
 }
 
+function validMobileNo()
+{
+        echo "Enter the Mobile NUmber:"
+        read mobno
+
+	match="^([+][9][1])?[6-9]{1}[0-9]{9}$"
+        if [[ $mobno =~ $match ]]
+        then
+                echo "valid Mobile number"
+        else
+                echo "Invalid Mobile Number"
+
+        fi
+}
+
 main()
 {
-#firstName
-#lastName
+firstName
+lastName
 validEmail
+validMobileNo
 }
 main
