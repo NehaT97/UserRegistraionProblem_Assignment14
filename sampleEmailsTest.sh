@@ -18,5 +18,5 @@ then
 	echo Valid;
 else
 	echo ""
-	echo Email;
+	echo Invalid;
 fi
