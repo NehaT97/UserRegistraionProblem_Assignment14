@@ -15,8 +15,8 @@ read value
 if [[ $value =~ $pattern ]]
 then
 	echo ""
-	echo true;
+	echo Valid;
 else
 	echo ""
-	echo false;
+	echo Email;
 fi
